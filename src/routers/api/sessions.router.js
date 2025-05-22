@@ -24,9 +24,8 @@ router.post('/login', (req, res, next) => {
 export default router;
 
 // Ruta protegida que devuelve los datos del usuario logueado
-router.get('/current',
-  passport.authenticate('jwt', { session: false }),
-  (req, res) => {
-    res.json({ user: req.user });
-  }
+router.get(
+  '/current',
+  passport.authenticate('user', { session: false }),
+  (req, res) => res.json({ user: req.user })
 );
