@@ -29,7 +29,7 @@ app.use(passport.initialize());
 // 3) Conectar DB y arrancar
 const ready = async () => {
   await dbConnect(process.env.MONGO_URL);
-  console.log(`🚀 Server on http://localhost:${PORT} [mode: ${argvsHelper.mode}]`);
+  console.log(`🚀 El servidor escucha perri http://localhost:${PORT} [mode: ${argvsHelper.mode}]`);
 };
 app.listen(PORT, ready);
 
