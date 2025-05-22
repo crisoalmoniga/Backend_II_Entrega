@@ -11,6 +11,11 @@ import argvsHelper from "./src/helpers/argvs.helper.js";
 import cookieParser from "cookie-parser";
 import session from "express-session";
 import MongoStore from "connect-mongo";
+import passport from 'passport';
+import { initPassport } from './src/config/passport/index.js';
+
+initPassport();
+app.use(passport.initialize());
 
 /* server settings */
 const server = express();
